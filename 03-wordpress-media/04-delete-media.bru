@@ -1,0 +1,21 @@
+meta {
+  name: 04 Delete Media
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{base_url}}/wp-json/wp/v2/media/{{media_id}}?force=true
+  body: none
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Διαγράφει media file
+  force=true απαιτείται για media (δεν πάει στον κάδο)
+  ΠΡΟΣΟΧΗ: μόνιμη διαγραφή
+}

@@ -1,0 +1,14 @@
+meta {
+  name: "[SECURITY] WC System Status - Anonymous"
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{base_url}}/wp-json/wc/v3/system_status
+}
+
+docs {
+  ΚΡΙΣΙΜΟ - Αναμενόμενο: 401
+  Αν 200 = εκθέτει PHP version, plugins, file permissions
+}

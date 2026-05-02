@@ -1,0 +1,15 @@
+meta {
+  name: "[SECURITY] WC Orders - Anonymous"
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{base_url}}/wp-json/wc/v3/orders
+}
+
+docs {
+  ΚΡΙΣΙΜΟ - Αναμενόμενο: 401
+  Αν 200 = εκθέτει παραγγελίες και στοιχεία πελατών
+  GDPR παραβίαση
+}

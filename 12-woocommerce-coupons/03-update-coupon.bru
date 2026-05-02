@@ -1,0 +1,26 @@
+meta {
+  name: 03 Update Coupon
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{base_url}}/wp-json/wc/v3/coupons/{{coupon_id}}
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "amount": "15",
+    "usage_limit": 200
+  }
+}
+
+docs {
+  Ενημερώνει κουπόνι
+}

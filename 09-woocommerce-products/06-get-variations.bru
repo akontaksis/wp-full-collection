@@ -1,0 +1,19 @@
+meta {
+  name: 06 Get Product Variations
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{base_url}}/wp-json/wc/v3/products/{{product_id}}/variations
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει variations ενός variable product
+  Κάθε variation έχει δικό της τιμή, stock, attributes
+}

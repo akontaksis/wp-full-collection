@@ -1,0 +1,26 @@
+meta {
+  name: 04 Update Comment Status
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{base_url}}/wp-json/wp/v2/comments/{{comment_id}}
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "status": "approved"
+  }
+}
+
+docs {
+  Αλλάζει status comment
+  status: approved | hold | spam | trash
+}

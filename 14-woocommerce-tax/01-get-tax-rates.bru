@@ -1,0 +1,19 @@
+meta {
+  name: 01 Get Tax Rates
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/wp-json/wc/v3/taxes
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει tax rates
+  Params: ?class=standard&country=GR
+}

@@ -1,0 +1,18 @@
+meta {
+  name: 02 Get Single Comment
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/comments/{{comment_id}}
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει ένα συγκεκριμένο comment
+}

@@ -1,0 +1,19 @@
+meta {
+  name: 02 Get Single Order
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/wp-json/wc/v3/orders/{{order_id}}
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει πλήρη στοιχεία παραγγελίας
+  Περιέχει: billing, shipping, line_items, shipping_lines, meta_data
+}

@@ -1,0 +1,20 @@
+meta {
+  name: 03 Get Post Types
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/types
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει όλα τα registered post types
+  Περιλαμβάνει: post, page, product, κτλ
+  Χρήσιμο για να βλέπεις ποια custom post types υπάρχουν
+}

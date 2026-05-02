@@ -1,0 +1,20 @@
+meta {
+  name: 01 Get All Comments
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/comments
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει λίστα comments
+  Params: ?status=approved&per_page=20&post={{post_id}}
+  status: approved | hold | spam | trash | any
+}

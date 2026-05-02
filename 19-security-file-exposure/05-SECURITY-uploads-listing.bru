@@ -1,0 +1,15 @@
+meta {
+  name: "[SECURITY] Uploads Directory Listing"
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{base_url}}/wp-content/uploads/
+}
+
+docs {
+  Αναμενόμενο: 403 Forbidden
+  Αν 200 με listing = εκθέτει όλα τα αρχεία
+  Διόρθωση: Options -Indexes στο .htaccess
+}

@@ -1,0 +1,19 @@
+meta {
+  name: 03 Get Tags
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/tags
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει λίστα tags
+  Params: ?per_page=100&hide_empty=false
+}

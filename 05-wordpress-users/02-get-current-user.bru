@@ -1,0 +1,19 @@
+meta {
+  name: 02 Get Current User (me)
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/users/me
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει τα στοιχεία του authenticated user
+  Χρήσιμο για να επιβεβαιώσεις ότι το auth δουλεύει
+}

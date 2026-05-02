@@ -1,0 +1,21 @@
+meta {
+  name: 05 Delete Product
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{base_url}}/wp-json/wc/v3/products/{{product_id}}?force=true
+  body: none
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Διαγράφει προϊόν
+  force=true για μόνιμη διαγραφή
+  ΠΡΟΣΟΧΗ: μη το τρέχεις σε production
+}

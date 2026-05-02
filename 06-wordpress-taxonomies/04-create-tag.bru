@@ -1,0 +1,27 @@
+meta {
+  name: 04 Create Tag
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{base_url}}/wp-json/wp/v2/tags
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "name": "New Tag",
+    "slug": "new-tag",
+    "description": "Tag description"
+  }
+}
+
+docs {
+  Δημιουργεί νέο tag
+}

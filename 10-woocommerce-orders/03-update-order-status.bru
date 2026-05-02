@@ -1,0 +1,26 @@
+meta {
+  name: 03 Update Order Status
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{base_url}}/wp-json/wc/v3/orders/{{order_id}}
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "status": "completed"
+  }
+}
+
+docs {
+  Αλλάζει status παραγγελίας
+  status: pending | processing | on-hold | completed | cancelled | refunded | failed
+}

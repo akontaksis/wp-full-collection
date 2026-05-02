@@ -1,0 +1,19 @@
+meta {
+  name: 01 Get All Coupons
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/wp-json/wc/v3/coupons
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει λίστα κουπονιών
+  Params: ?per_page=20&code=SUMMER
+}

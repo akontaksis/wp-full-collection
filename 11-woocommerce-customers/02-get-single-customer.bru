@@ -1,0 +1,19 @@
+meta {
+  name: 02 Get Single Customer
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/wp-json/wc/v3/customers/{{customer_id}}
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει στοιχεία customer
+  Περιέχει: billing, shipping, orders_count, total_spent
+}

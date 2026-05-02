@@ -1,0 +1,15 @@
+meta {
+  name: "[SECURITY] WP Cron"
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/wp-cron.php
+}
+
+docs {
+  Αναμενόμενο: 403 ή blocked
+  Αν 200 = DDoS vector
+  Διόρθωση: DISABLE_WP_CRON=true + real cron job
+}

@@ -1,0 +1,27 @@
+meta {
+  name: 05 Create Order Note
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{base_url}}/wp-json/wc/v3/orders/{{order_id}}/notes
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "note": "Η παραγγελία αποστάλθηκε",
+    "customer_note": false
+  }
+}
+
+docs {
+  Προσθέτει note σε παραγγελία
+  customer_note: true = φαίνεται στον πελάτη
+}

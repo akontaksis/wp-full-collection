@@ -1,0 +1,15 @@
+meta {
+  name: "[SECURITY] Plugins List - Anonymous"
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/plugins
+}
+
+docs {
+  Αναμενόμενο: 401
+  Αν 200 = εκθέτει plugins και versions
+  Δίνει attack surface σε hackers
+}

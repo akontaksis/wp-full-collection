@@ -1,0 +1,19 @@
+meta {
+  name: 02 Get Single Page
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/pages/{{page_id}}
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει ένα συγκεκριμένο page με όλα τα meta
+  Περιέχει: title, content, meta (elementor_data, yoast κτλ)
+}

@@ -1,0 +1,19 @@
+meta {
+  name: 01 Sales Report
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/wp-json/wc/v3/reports/sales?date_min=2025-01-01&date_max=2025-12-31
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει sales report για χρονική περίοδο
+  Περιέχει: total_sales, net_sales, total_orders, total_items
+}

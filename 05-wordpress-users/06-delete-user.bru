@@ -1,0 +1,21 @@
+meta {
+  name: 06 Delete User
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{base_url}}/wp-json/wp/v2/users/{{user_id}}?force=true&reassign=1
+  body: none
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Διαγράφει user
+  reassign=1 = ID του user που παίρνει το περιεχόμενο
+  ΠΡΟΣΟΧΗ: μόνιμη ενέργεια
+}

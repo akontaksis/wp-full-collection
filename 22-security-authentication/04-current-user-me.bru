@@ -1,0 +1,20 @@
+meta {
+  name: "Get Current User (Auth Test)"
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/users/me
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιβεβαιώνει ότι το authentication δουλεύει σωστά
+  Αν 401 = λάθος credentials ή application password
+  Τρέξε αυτό πρώτα για να επιβεβαιώσεις το auth
+}

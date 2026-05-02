@@ -1,0 +1,28 @@
+meta {
+  name: 03 Update Customer
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{base_url}}/wp-json/wc/v3/customers/{{customer_id}}
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "billing": {
+      "first_name": "Updated",
+      "last_name": "Name"
+    }
+  }
+}
+
+docs {
+  Ενημερώνει στοιχεία customer
+}

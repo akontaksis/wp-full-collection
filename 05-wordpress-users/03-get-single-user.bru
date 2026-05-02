@@ -1,0 +1,18 @@
+meta {
+  name: 03 Get Single User
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/users/{{user_id}}
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει στοιχεία συγκεκριμένου user
+}

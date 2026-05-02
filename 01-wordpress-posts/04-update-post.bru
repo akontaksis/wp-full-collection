@@ -1,0 +1,28 @@
+meta {
+  name: 04 Update Post
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{base_url}}/wp-json/wp/v2/posts/{{post_id}}
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "title": "Updated Title",
+    "content": "Updated content",
+    "status": "publish"
+  }
+}
+
+docs {
+  Ενημερώνει υπάρχον post
+  Στείλε μόνο τα fields που θέλεις να αλλάξεις
+}

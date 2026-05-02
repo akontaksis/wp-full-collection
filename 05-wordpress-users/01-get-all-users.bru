@@ -1,0 +1,20 @@
+meta {
+  name: 01 Get All Users
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/users
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει λίστα users
+  Params: ?roles=administrator&per_page=20
+  roles: administrator | editor | author | contributor | subscriber
+}

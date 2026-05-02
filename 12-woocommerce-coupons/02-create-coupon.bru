@@ -1,0 +1,33 @@
+meta {
+  name: 02 Create Coupon
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/wp-json/wc/v3/coupons
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "code": "TESTCOUPON",
+    "discount_type": "percent",
+    "amount": "10",
+    "individual_use": true,
+    "exclude_sale_items": false,
+    "minimum_amount": "50.00",
+    "usage_limit": 100,
+    "expiry_date": "2025-12-31"
+  }
+}
+
+docs {
+  Δημιουργεί νέο κουπόνι
+  discount_type: percent | fixed_cart | fixed_product
+}

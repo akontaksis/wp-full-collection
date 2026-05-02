@@ -1,0 +1,19 @@
+meta {
+  name: 03 Orders Totals
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/wp-json/wc/v3/reports/orders/totals
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει totals ανά order status
+  Χρήσιμο για dashboard overview
+}

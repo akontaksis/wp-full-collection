@@ -1,0 +1,20 @@
+meta {
+  name: 01 Get All Pages
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/pages
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει λίστα pages
+  Params: ?per_page=10&status=publish&parent=0
+  parent=0 = μόνο top-level pages
+}

@@ -1,0 +1,19 @@
+meta {
+  name: 02 Get Menu Items
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/menu-items
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει λίστα menu items
+  Params: ?menus=1 για συγκεκριμένο menu
+}

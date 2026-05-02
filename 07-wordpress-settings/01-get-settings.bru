@@ -1,0 +1,20 @@
+meta {
+  name: 01 Get Settings
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/settings
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει site settings
+  Περιέχει: title, description, url, email, timezone, date_format, language
+  Χρειάζεται administrator privileges
+}

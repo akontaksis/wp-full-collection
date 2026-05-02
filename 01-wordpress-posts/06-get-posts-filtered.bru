@@ -1,0 +1,21 @@
+meta {
+  name: 06 Get Posts Filtered
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/posts?status=draft&per_page=20&orderby=modified&order=desc
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Φιλτράρει posts
+  status: publish | draft | pending | private | any
+  orderby: date | modified | title | id | slug
+  order: asc | desc
+}

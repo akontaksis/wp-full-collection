@@ -1,0 +1,28 @@
+meta {
+  name: 03 Create Comment
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{base_url}}/wp-json/wp/v2/comments
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "post": 1,
+    "content": "Test comment",
+    "author_name": "Test User",
+    "author_email": "test@example.com"
+  }
+}
+
+docs {
+  Δημιουργεί νέο comment
+}

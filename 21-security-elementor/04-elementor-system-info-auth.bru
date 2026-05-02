@@ -1,0 +1,19 @@
+meta {
+  name: "Elementor System Info - Authenticated"
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{base_url}}/wp-json/elementor/v1/system-info
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Με auth - δες τι ακριβώς εκθέτει
+  Χρήσιμο για inventory του server environment
+}

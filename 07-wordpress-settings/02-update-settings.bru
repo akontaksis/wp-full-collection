@@ -1,0 +1,29 @@
+meta {
+  name: 02 Update Settings
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{base_url}}/wp-json/wp/v2/settings
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "title": "My Site Title",
+    "description": "My Site Description",
+    "timezone": "Europe/Athens",
+    "date_format": "d/m/Y"
+  }
+}
+
+docs {
+  Ενημερώνει site settings
+  ΠΡΟΣΟΧΗ: αλλάζει ρυθμίσεις του site
+}

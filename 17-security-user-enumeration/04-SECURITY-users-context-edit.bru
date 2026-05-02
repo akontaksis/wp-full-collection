@@ -1,0 +1,15 @@
+meta {
+  name: "[SECURITY] Users Context Edit - Anonymous"
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/users?context=edit
+}
+
+docs {
+  Αναμενόμενο: 401
+  context=edit επιστρέφει emails και ευαίσθητα δεδομένα
+  Ποτέ δεν πρέπει να είναι ανοιχτό ανώνυμα
+}

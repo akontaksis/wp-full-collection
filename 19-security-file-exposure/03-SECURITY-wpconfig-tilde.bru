@@ -1,0 +1,14 @@
+meta {
+  name: "[SECURITY] WP Config Backup ~"
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/wp-config.php~
+}
+
+docs {
+  Αναμενόμενο: 403 ή 404
+  Backup αρχείο από text editors
+}

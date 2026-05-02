@@ -1,0 +1,14 @@
+meta {
+  name: "[SECURITY] Elementor System Info - Anonymous"
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/wp-json/elementor/v1/system-info
+}
+
+docs {
+  ΚΡΙΣΙΜΟ - Αναμενόμενο: 401
+  Αν 200 = server path, PHP version, memory, plugins
+}

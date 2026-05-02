@@ -1,0 +1,21 @@
+meta {
+  name: 05 Delete Post
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{base_url}}/wp-json/wp/v2/posts/{{post_id}}
+  body: none
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Διαγράφει post (πάει στον κάδο)
+  Για μόνιμη διαγραφή: ?force=true
+  ΠΡΟΣΟΧΗ: μη το τρέχεις σε production χωρίς να το σκεφτείς
+}

@@ -1,0 +1,15 @@
+meta {
+  name: "[SECURITY] Author Redirect ID 1"
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/?author=1
+}
+
+docs {
+  Αναμενόμενο: 404 ή homepage redirect
+  Αν redirect σε /author/username/ = αποκαλύπτει username
+  Επικίνδυνο για brute force
+}

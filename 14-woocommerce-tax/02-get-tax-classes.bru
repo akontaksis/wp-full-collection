@@ -1,0 +1,19 @@
+meta {
+  name: 02 Get Tax Classes
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/wp-json/wc/v3/taxes/classes
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει tax classes
+  standard | reduced-rate | zero-rate
+}

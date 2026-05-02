@@ -1,0 +1,20 @@
+meta {
+  name: 01 Get All Posts
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/posts
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει λίστα posts
+  Params: ?per_page=10&page=1&status=publish&orderby=date&order=desc
+  Χωρίς auth επιστρέφει μόνο published posts
+}

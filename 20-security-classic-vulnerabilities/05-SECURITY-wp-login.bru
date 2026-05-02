@@ -1,0 +1,14 @@
+meta {
+  name: "[SECURITY] WP Login Protection"
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{base_url}}/wp-login.php
+}
+
+docs {
+  Έλεγξε: υπάρχει reCAPTCHA και rate limiting;
+  Αν φορτώνει ελεύθερα = ευάλωτο σε brute force
+}

@@ -1,0 +1,31 @@
+meta {
+  name: 03 Create Post
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{base_url}}/wp-json/wp/v2/posts
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "title": "Test Post",
+    "content": "Test content",
+    "status": "draft",
+    "categories": [],
+    "tags": []
+  }
+}
+
+docs {
+  Δημιουργεί νέο post
+  status: draft | publish | pending | private
+  Χρειάζεται authentication
+}

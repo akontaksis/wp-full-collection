@@ -1,0 +1,20 @@
+meta {
+  name: 01 Get All Media
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/media
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει λίστα media files
+  Params: ?media_type=image&per_page=20&mime_type=image/jpeg
+  media_type: image | video | audio | application
+}

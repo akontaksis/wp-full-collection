@@ -1,0 +1,20 @@
+meta {
+  name: 01 Get All Customers
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/wp-json/wc/v3/customers
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει λίστα customers
+  Params: ?per_page=20&role=customer&orderby=registered_date
+  role: customer | subscriber | all
+}

@@ -1,0 +1,20 @@
+meta {
+  name: 01 Get Payment Gateways
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/wp-json/wc/v3/payment_gateways
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει λίστα payment gateways
+  Περιέχει: id, title, enabled, settings
+  Χρειάζεται administrator privileges
+}

@@ -1,0 +1,19 @@
+meta {
+  name: 05 Get All Taxonomies
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/taxonomies
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει όλα τα registered taxonomies
+  Περιλαμβάνει: category, post_tag, product_cat, product_tag κτλ
+}

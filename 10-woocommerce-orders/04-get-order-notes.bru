@@ -1,0 +1,19 @@
+meta {
+  name: 04 Get Order Notes
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{base_url}}/wp-json/wc/v3/orders/{{order_id}}/notes
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει notes μιας παραγγελίας
+  Περιέχει: customer notes και internal admin notes
+}

@@ -1,0 +1,19 @@
+meta {
+  name: 02 Get Single Media
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/media/{{media_id}}
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει ένα media file με metadata
+  Περιέχει: source_url, sizes, alt_text, caption, mime_type
+}

@@ -1,0 +1,19 @@
+meta {
+  name: 02 Get Single Post
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/posts/{{post_id}}
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει ένα συγκεκριμένο post
+  Άλλαξε το post_id στο environment
+}

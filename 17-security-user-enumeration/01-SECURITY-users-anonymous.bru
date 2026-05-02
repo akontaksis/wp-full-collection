@@ -1,0 +1,15 @@
+meta {
+  name: "[SECURITY] Users - Anonymous"
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/users
+}
+
+docs {
+  Αναμενόμενο: 401
+  Αν 200 = εκθέτει usernames, IDs, slugs
+  Διόρθωση: block endpoint μέσω functions.php
+}

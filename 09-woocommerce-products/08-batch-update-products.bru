@@ -1,0 +1,36 @@
+meta {
+  name: 08 Batch Update Products
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{base_url}}/wp-json/wc/v3/products/batch
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "update": [
+      {
+        "id": 1,
+        "regular_price": "20.00"
+      },
+      {
+        "id": 2,
+        "stock_quantity": 50
+      }
+    ]
+  }
+}
+
+docs {
+  Batch update πολλών προϊόντων με ένα request
+  Υποστηρίζει: create, update, delete arrays
+  Max 100 προϊόντα ανά batch
+}

@@ -1,0 +1,32 @@
+meta {
+  name: 03 Create Page
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{base_url}}/wp-json/wp/v2/pages
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "title": "New Page",
+    "content": "Page content",
+    "status": "draft",
+    "parent": 0,
+    "menu_order": 0,
+    "template": ""
+  }
+}
+
+docs {
+  Δημιουργεί νέο page
+  parent: ID του parent page (0 = top level)
+  template: όνομα template αρχείου π.χ. "full-width.php"
+}

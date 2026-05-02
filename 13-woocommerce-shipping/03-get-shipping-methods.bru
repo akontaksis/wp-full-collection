@@ -1,0 +1,19 @@
+meta {
+  name: 03 Get All Shipping Methods
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/wp-json/wc/v3/shipping_methods
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει όλα τα διαθέσιμα shipping methods
+  flat_rate | free_shipping | local_pickup κτλ
+}

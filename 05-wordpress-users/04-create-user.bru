@@ -1,0 +1,31 @@
+meta {
+  name: 04 Create User
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{base_url}}/wp-json/wp/v2/users
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "username": "newuser",
+    "email": "newuser@example.com",
+    "password": "SecurePassword123!",
+    "roles": ["editor"],
+    "first_name": "New",
+    "last_name": "User"
+  }
+}
+
+docs {
+  Δημιουργεί νέο user
+  Χρειάζεται administrator privileges
+}

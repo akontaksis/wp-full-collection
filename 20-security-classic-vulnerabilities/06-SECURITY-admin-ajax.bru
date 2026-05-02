@@ -1,0 +1,14 @@
+meta {
+  name: "[SECURITY] Admin Ajax"
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{base_url}}/wp-admin/admin-ajax.php
+}
+
+docs {
+  Αναμενόμενο: "0" ή 400
+  Πρέπει να απαντά αλλά χωρίς να εκθέτει data
+}

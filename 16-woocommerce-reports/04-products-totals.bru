@@ -1,0 +1,19 @@
+meta {
+  name: 04 Products Totals
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{base_url}}/wp-json/wc/v3/reports/products/totals
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει totals ανά product status
+  Δείχνει πόσα published, draft, private products υπάρχουν
+}

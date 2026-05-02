@@ -1,0 +1,14 @@
+meta {
+  name: "[SECURITY] WP Includes Directory"
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{base_url}}/wp-includes/
+}
+
+docs {
+  Αναμενόμενο: 403 Forbidden
+  Αν listing = εκθέτει WordPress core files
+}

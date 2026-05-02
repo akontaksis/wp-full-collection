@@ -1,0 +1,19 @@
+meta {
+  name: 02 Get Single Product
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/wp-json/wc/v3/products/{{product_id}}
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει πλήρη στοιχεία προϊόντος
+  Περιέχει: price, stock, attributes, variations, meta_data
+}

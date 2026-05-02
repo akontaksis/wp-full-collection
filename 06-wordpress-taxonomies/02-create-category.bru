@@ -1,0 +1,28 @@
+meta {
+  name: 02 Create Category
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/wp-json/wp/v2/categories
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "name": "New Category",
+    "slug": "new-category",
+    "description": "Category description",
+    "parent": 0
+  }
+}
+
+docs {
+  Δημιουργεί νέα category
+}

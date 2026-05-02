@@ -1,0 +1,19 @@
+meta {
+  name: 03 Get Menu Locations
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{base_url}}/wp-json/wp/v2/menu-locations
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει registered menu locations
+  π.χ. primary, footer, sidebar
+}

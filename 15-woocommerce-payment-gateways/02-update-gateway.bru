@@ -1,0 +1,27 @@
+meta {
+  name: 02 Update Gateway
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{base_url}}/wp-json/wc/v3/payment_gateways/viva_com_smart_checkout
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "enabled": true
+  }
+}
+
+docs {
+  Ενημερώνει payment gateway
+  Άλλαξε το gateway ID (π.χ. viva_com_smart_checkout, stripe, paypal)
+  ΠΡΟΣΟΧΗ: μπορεί να επηρεάσει τις πληρωμές
+}

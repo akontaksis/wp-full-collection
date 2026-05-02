@@ -1,0 +1,28 @@
+meta {
+  name: 03 Update Media
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{base_url}}/wp-json/wp/v2/media/{{media_id}}
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "alt_text": "Νέο alt text",
+    "caption": "Νέο caption",
+    "description": "Νέα περιγραφή"
+  }
+}
+
+docs {
+  Ενημερώνει metadata ενός media file
+  Χρήσιμο για bulk alt text updates
+}

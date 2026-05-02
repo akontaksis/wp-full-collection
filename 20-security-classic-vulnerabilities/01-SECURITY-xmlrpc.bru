@@ -1,0 +1,15 @@
+meta {
+  name: "[SECURITY] XML-RPC"
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/xmlrpc.php
+}
+
+docs {
+  Αναμενόμενο: 403 ή blocked
+  Αν 200 = ανοιχτό, χρησιμοποιείται για brute force
+  Διόρθωση: block μέσω .htaccess
+}

@@ -1,0 +1,21 @@
+meta {
+  name: 05 Delete Page
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{base_url}}/wp-json/wp/v2/pages/{{page_id}}
+  body: none
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Διαγράφει page
+  ?force=true για μόνιμη διαγραφή
+  ΠΡΟΣΟΧΗ: μη το τρέχεις σε production
+}

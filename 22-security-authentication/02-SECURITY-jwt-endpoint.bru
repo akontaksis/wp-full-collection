@@ -1,0 +1,14 @@
+meta {
+  name: "[SECURITY] JWT Auth Endpoint"
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/wp-json/jwt-auth/v1/token
+}
+
+docs {
+  Αναμενόμενο: 404 αν δεν υπάρχει JWT plugin
+  Αν υπάρχει: έλεγξε ότι απαιτεί valid credentials
+}

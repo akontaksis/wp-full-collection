@@ -1,0 +1,20 @@
+meta {
+  name: 01 Get All Products
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/wp-json/wc/v3/products
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+docs {
+  Επιστρέφει λίστα προϊόντων
+  Params: ?per_page=20&status=publish&category=&sku=&stock_status=instock
+  stock_status: instock | outofstock | onbackorder
+}

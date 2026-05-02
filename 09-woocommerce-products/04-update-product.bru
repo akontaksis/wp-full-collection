@@ -1,0 +1,28 @@
+meta {
+  name: 04 Update Product
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{base_url}}/wp-json/wc/v3/products/{{product_id}}
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "regular_price": "15.00",
+    "stock_quantity": 50,
+    "status": "publish"
+  }
+}
+
+docs {
+  Ενημερώνει προϊόν
+  Στείλε μόνο τα fields που θέλεις να αλλάξεις
+}

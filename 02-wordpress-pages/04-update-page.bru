@@ -1,0 +1,26 @@
+meta {
+  name: 04 Update Page
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{base_url}}/wp-json/wp/v2/pages/{{page_id}}
+  body: json
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{app_password}}
+}
+
+body:json {
+  {
+    "title": "Updated Page Title",
+    "status": "publish"
+  }
+}
+
+docs {
+  Ενημερώνει υπάρχον page
+}
