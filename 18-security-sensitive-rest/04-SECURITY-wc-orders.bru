@@ -8,8 +8,24 @@ get {
   url: {{base_url}}/wp-json/wc/v3/orders
 }
 
+assert {
+  res.status: eq 401
+}
+
+tests {
+  test("Orders endpoint must require authentication - GDPR", function() {
+    expect(res.status).to.equal(401);
+  });
+
+  test("Response must not contain customer data", function() {
+    if (res.status === 200) {
+      const body = res.getBody();
+      expect(body).to.be.empty;
+    }
+  });
+}
+
 docs {
   ΚΡΙΣΙΜΟ - Αναμενόμενο: 401
-  Αν 200 = εκθέτει παραγγελίες και στοιχεία πελατών
-  GDPR παραβίαση
+  Αν 200 = GDPR παραβίαση
 }

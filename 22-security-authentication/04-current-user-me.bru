@@ -13,8 +13,24 @@ auth:basic {
   password: {{app_password}}
 }
 
+assert {
+  res.status: eq 200
+  res.responseTime: lt 3000
+}
+
+tests {
+  test("Authentication must work correctly", function() {
+    expect(res.status).to.equal(200);
+  });
+
+  test("Response must contain user data", function() {
+    const body = res.getBody();
+    expect(body).to.have.property('id');
+    expect(body).to.have.property('name');
+  });
+}
+
 docs {
-  Επιβεβαιώνει ότι το authentication δουλεύει σωστά
-  Αν 401 = λάθος credentials ή application password
-  Τρέξε αυτό πρώτα για να επιβεβαιώσεις το auth
+  Επιβεβαιώνει ότι το authentication δουλεύει
+  Τρέξε αυτό πρώτα πριν τα υπόλοιπα
 }

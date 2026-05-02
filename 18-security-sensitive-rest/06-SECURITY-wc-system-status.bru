@@ -8,6 +8,16 @@ get {
   url: {{base_url}}/wp-json/wc/v3/system_status
 }
 
+assert {
+  res.status: eq 401
+}
+
+tests {
+  test("System status must require authentication", function() {
+    expect(res.status).to.equal(401);
+  });
+}
+
 docs {
   ΚΡΙΣΙΜΟ - Αναμενόμενο: 401
   Αν 200 = εκθέτει PHP version, plugins, file permissions

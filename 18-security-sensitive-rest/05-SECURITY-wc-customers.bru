@@ -8,7 +8,17 @@ get {
   url: {{base_url}}/wp-json/wc/v3/customers
 }
 
+assert {
+  res.status: eq 401
+}
+
+tests {
+  test("Customers endpoint must require authentication - GDPR", function() {
+    expect(res.status).to.equal(401);
+  });
+}
+
 docs {
   ΚΡΙΣΙΜΟ - Αναμενόμενο: 401
-  Αν 200 = GDPR παραβίαση, εκθέτει customer data
+  Αν 200 = GDPR παραβίαση
 }

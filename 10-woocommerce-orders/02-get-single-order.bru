@@ -13,7 +13,26 @@ auth:basic {
   password: {{app_password}}
 }
 
+assert {
+  res.status: eq 200
+  res.responseTime: lt 5000
+}
+
+tests {
+  test("Should return 200", function() {
+    expect(res.status).to.equal(200);
+  });
+
+  test("Should contain order fields", function() {
+    const body = res.getBody();
+    expect(body).to.have.property('id');
+    expect(body).to.have.property('status');
+    expect(body).to.have.property('billing');
+    expect(body).to.have.property('line_items');
+  });
+}
+
 docs {
   Επιστρέφει πλήρη στοιχεία παραγγελίας
-  Περιέχει: billing, shipping, line_items, shipping_lines, meta_data
+  Άλλαξε order_id στο environment
 }

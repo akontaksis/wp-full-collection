@@ -8,7 +8,17 @@ get {
   url: {{base_url}}/wp-json/elementor/v1/system-info
 }
 
+assert {
+  res.status: eq 401
+}
+
+tests {
+  test("Elementor system info must require authentication", function() {
+    expect(res.status).to.equal(401);
+  });
+}
+
 docs {
   ΚΡΙΣΙΜΟ - Αναμενόμενο: 401
-  Αν 200 = server path, PHP version, memory, plugins
+  Αν 200 = server path, PHP version, plugins
 }

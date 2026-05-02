@@ -8,8 +8,17 @@ get {
   url: {{base_url}}/wp-json/wp/v2/users?context=edit
 }
 
+assert {
+  res.status: eq 401
+}
+
+tests {
+  test("context=edit must require authentication", function() {
+    expect(res.status).to.equal(401);
+  });
+}
+
 docs {
   Αναμενόμενο: 401
   context=edit επιστρέφει emails και ευαίσθητα δεδομένα
-  Ποτέ δεν πρέπει να είναι ανοιχτό ανώνυμα
 }

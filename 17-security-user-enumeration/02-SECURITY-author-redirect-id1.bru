@@ -8,8 +8,23 @@ get {
   url: {{base_url}}/?author=1
 }
 
+assert {
+  res.status: in [301, 302, 404]
+  res.responseTime: lt 5000
+}
+
+tests {
+  test("Should not redirect to author URL with username", function() {
+    const location = res.headers['location'] || '';
+    expect(location).to.not.include('/author/');
+  });
+
+  test("Status should not be 200", function() {
+    expect(res.status).to.not.equal(200);
+  });
+}
+
 docs {
-  Αναμενόμενο: 404 ή homepage redirect
+  Αναμενόμενο: 404 ή redirect σε homepage
   Αν redirect σε /author/username/ = αποκαλύπτει username
-  Επικίνδυνο για brute force
 }

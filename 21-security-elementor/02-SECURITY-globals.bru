@@ -8,7 +8,16 @@ get {
   url: {{base_url}}/wp-json/elementor/v1/globals
 }
 
+assert {
+  res.status: eq 401
+}
+
+tests {
+  test("Elementor globals must require authentication", function() {
+    expect(res.status).to.equal(401);
+  });
+}
+
 docs {
   Αναμενόμενο: 401
-  Global colors και typography settings
 }

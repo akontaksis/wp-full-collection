@@ -8,8 +8,23 @@ get {
   url: {{base_url}}/wp-content/uploads/
 }
 
+assert {
+  res.status: eq 403
+}
+
+tests {
+  test("Uploads directory listing must be disabled", function() {
+    expect(res.status).to.equal(403);
+  });
+
+  test("Response must not contain directory listing", function() {
+    const body = res.getBody('text');
+    expect(body).to.not.include('Index of');
+    expect(body).to.not.include('Parent Directory');
+  });
+}
+
 docs {
   Αναμενόμενο: 403 Forbidden
   Αν 200 με listing = εκθέτει όλα τα αρχεία
-  Διόρθωση: Options -Indexes στο .htaccess
 }

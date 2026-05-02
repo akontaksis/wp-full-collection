@@ -8,6 +8,24 @@ get {
   url: {{base_url}}/wp-json/wp/v2/users
 }
 
+assert {
+  res.status: eq 401
+  res.responseTime: lt 5000
+}
+
+tests {
+  test("Should return 401 - Users endpoint must be protected", function() {
+    expect(res.status).to.equal(401);
+  });
+
+  test("Should not expose usernames", function() {
+    if (res.status === 200) {
+      const body = res.getBody();
+      expect(body).to.be.empty;
+    }
+  });
+}
+
 docs {
   Αναμενόμενο: 401
   Αν 200 = εκθέτει usernames, IDs, slugs

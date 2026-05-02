@@ -8,6 +8,23 @@ get {
   url: {{base_url}}/readme.html
 }
 
+assert {
+  res.status: in [403, 404]
+}
+
+tests {
+  test("readme.html must not be accessible", function() {
+    expect(res.status).to.be.oneOf([403, 404]);
+  });
+
+  test("WordPress version must not be exposed", function() {
+    if (res.status === 200) {
+      const body = res.getBody('text');
+      expect(body).to.not.include('Version');
+    }
+  });
+}
+
 docs {
   Αναμενόμενο: 404 ή 403
   Αν 200 = εκθέτει WordPress version

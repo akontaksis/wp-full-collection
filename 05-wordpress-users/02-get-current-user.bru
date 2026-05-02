@@ -13,6 +13,24 @@ auth:basic {
   password: {{app_password}}
 }
 
+assert {
+  res.status: eq 200
+  res.responseTime: lt 3000
+}
+
+tests {
+  test("Should return 200", function() {
+    expect(res.status).to.equal(200);
+  });
+
+  test("Should return user object with id and name", function() {
+    const body = res.getBody();
+    expect(body).to.have.property('id');
+    expect(body).to.have.property('name');
+    expect(body.id).to.be.a('number');
+  });
+}
+
 docs {
   Επιστρέφει τα στοιχεία του authenticated user
   Χρήσιμο για να επιβεβαιώσεις ότι το auth δουλεύει

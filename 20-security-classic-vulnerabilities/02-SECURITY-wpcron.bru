@@ -8,8 +8,17 @@ get {
   url: {{base_url}}/wp-cron.php
 }
 
+assert {
+  res.status: in [403, 404]
+}
+
+tests {
+  test("WP Cron must not be publicly accessible", function() {
+    expect(res.status).to.be.oneOf([403, 404]);
+  });
+}
+
 docs {
   Αναμενόμενο: 403 ή blocked
   Αν 200 = DDoS vector
-  Διόρθωση: DISABLE_WP_CRON=true + real cron job
 }

@@ -8,7 +8,16 @@ get {
   url: {{base_url}}/wp-config.php~
 }
 
+assert {
+  res.status: in [403, 404]
+}
+
+tests {
+  test("WP Config tilde backup must not be accessible", function() {
+    expect(res.status).to.be.oneOf([403, 404]);
+  });
+}
+
 docs {
   Αναμενόμενο: 403 ή 404
-  Backup αρχείο από text editors
 }

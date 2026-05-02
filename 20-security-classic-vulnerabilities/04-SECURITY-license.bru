@@ -8,6 +8,16 @@ get {
   url: {{base_url}}/license.txt
 }
 
+assert {
+  res.status: in [403, 404]
+}
+
+tests {
+  test("license.txt must not be accessible", function() {
+    expect(res.status).to.be.oneOf([403, 404]);
+  });
+}
+
 docs {
   Αναμενόμενο: 404 ή 403
   Αν 200 = εκθέτει WordPress version

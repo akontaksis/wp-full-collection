@@ -8,8 +8,17 @@ get {
   url: {{base_url}}/wp-content/uploads/woocommerce_uploads/
 }
 
+assert {
+  res.status: eq 403
+}
+
+tests {
+  test("WooCommerce private uploads must be protected", function() {
+    expect(res.status).to.equal(403);
+  });
+}
+
 docs {
   Αναμενόμενο: 403 Forbidden
   Εδώ υπάρχουν invoices και private files
-  ΚΡΙΣΙΜΟ
 }

@@ -8,6 +8,16 @@ get {
   url: {{base_url}}/wp-config.php.bak
 }
 
+assert {
+  res.status: in [403, 404]
+}
+
+tests {
+  test("WP Config backup must not be publicly accessible", function() {
+    expect(res.status).to.be.oneOf([403, 404]);
+  });
+}
+
 docs {
   Αναμενόμενο: 403 ή 404
   Αν 200 = εκθέτει DB credentials και secret keys
